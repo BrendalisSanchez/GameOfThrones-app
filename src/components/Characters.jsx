@@ -51,15 +51,6 @@ function Characters() {
   //#region --- MAPPING:
   const mapCharacter = (aCharacter) => {
     return (
-      // <div
-      //   className="col-4"
-      //   key={"ListA-" + aCharacter.id}
-      //   style={{
-      //     display: "flex",
-      //     alignItems: "center",
-      //     justifyContent: "center",
-      //   }}
-      // >
       <div className="col-md-3" key={"ListA-" + aCharacter.id}>
         <div className="card" style={{ width: "18rem" }}>
           <img src={aCharacter.image} className="card-img-top" alt="..." />
