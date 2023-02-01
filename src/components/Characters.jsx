@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { options } from "../characterService";
-//import characterService from "../characterService";
+//import { options } from "../characterService";
+import characterService from "../characterService";
 
 function Characters() {
   //#region --- STATE:
@@ -12,8 +12,8 @@ function Characters() {
 
   //#region --- AXIOS CALL:
   useEffect(() => {
-    options().then(onGetCharacterSuccess).catch(onGetCharacterError);
-    //characterService().then(onGetCharacterSuccess).catch(onGetCharacterError);
+    //options().then(onGetCharacterSuccess).catch(onGetCharacterError);
+    characterService().then(onGetCharacterSuccess).catch(onGetCharacterError);
     // eslint-disable-next-line
   }, []);
 
@@ -53,16 +53,10 @@ function Characters() {
     return (
       <div className="col-md-3" key={"ListA-" + aCharacter.id}>
         <div className="card" style={{ width: "18rem" }}>
-          <img src={aCharacter.image} className="card-img-top" alt="..." />
+          <img src={aCharacter.imageUrl} className="card-img-top" alt="..." />
           <div className="card-body">
             <h5 className="card-title">{aCharacter.fullName} </h5>
             <p className="card-text">Family: {aCharacter.family}</p>
-            <button
-              className="link-btn btn btn-primary"
-              onClick={onToggleCharacters}
-            >
-              Hide
-            </button>
           </div>
         </div>
       </div>
